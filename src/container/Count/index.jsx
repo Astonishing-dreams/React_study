@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import { createIncrementAction, createDecrementAction, createIncrementAsyncAction } from '../../redux/count_action'
+import { createIncrementAction, createDecrementAction, createIncrementAsyncAction } from '../../redux/actions/count'
 import React, { Component } from 'react'
 
 // 定义Count的UI组件
@@ -31,7 +31,7 @@ class Count extends Component {
     render() {
         return (
             <div>
-                <h2>当前求和为：{this.props.sum}</h2>
+                <h2>当前求和为：{this.props.sum}---总人数为：{this.props.persons.length}</h2>
                 <select ref={c => this.number = c}>
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -48,7 +48,10 @@ class Count extends Component {
 
 // 链接UI与redux，生成容器组件
 export default connect(
-    (state) => ({ sum: state }),
+    (state) => ({
+        sum: state.he,
+        persons: state.persons
+    }),
     {
         add: createIncrementAction,
         decrement: createDecrementAction,

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Count from './container/Count'
+import Person from './container/Person'
 
 export default class App extends Component {
 
@@ -7,6 +8,8 @@ export default class App extends Component {
     return (
       <div className="container">
         <Count></Count>
+        <hr />
+        <Person></Person>
       </div>
     )
   }
