@@ -10,9 +10,11 @@ class Person extends Component {
 
     addPerson = () => {
         const { name, age } = this.state
-        const id = new Date()
-        console.log(name, age, id);
-        this.props.addPerson({ name, age, id })
+        if (name.trim() && age.trim()) {
+            const id = new Date()
+            // console.log(name, age, id);
+            this.props.addPerson({ name, age, id })
+        }
     }
     savePersonData = (type) => {
         return (e) => {
