@@ -1,5 +1,5 @@
 import React from 'react'
-import Demo from './components/3_hooks'
+import Demo from './components/8_ErrorBoundary/Parent'
 
 export default function App() {
   return (
